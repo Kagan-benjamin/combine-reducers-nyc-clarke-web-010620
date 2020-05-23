@@ -27,17 +27,20 @@ export class AuthorInput extends Component {
 
   render() {
     return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnChange(event)}
-            name="authorName"
-            value={this.state.authorName}
-            placeholder="author name" />
-        </p>
-        <input type="submit" />
-      </form>
+      <div>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+          <p>
+            <input
+              type="text"
+              onChange={(event) => this.handleOnChange(event)}
+              name="authorName"
+              value={this.state.authorName}
+              placeholder="author name" />
+          </p>
+            <input type="submit" />
+          <button onClick={ e => this.handleDelete(e) }>Delete Author</button>
+        </form>
+      </div>
     );
   }
 };
